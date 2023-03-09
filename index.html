@@ -1,119 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <title>Luận lovely</title>
+    <link href="css/main.css" rel="stylesheet">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luận ^^</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet" />
-</head>
-<style>
-  html,
-  body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    /* background: #000; */
-    background-image: url(thiep2.jpeg);
-    background-size: cover;
-    background-position-x: center;
-  }
-
-  .wraptex {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  #typedtext {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 0 40px;
-    font-family: "Lavishly Yours";
-    z-index: 5;
-    font-weight: 500;
-  }
-</style>
-
-<body>
-  <div class="wraptex">
-    <div id="typedtext">
+  <body>
+    <!-- <audio autoplay="autopaly">
+      <source src="renxi.mp3" type="audio/mp3" />
+    </audio> -->
+    <!-- 星空html -->
+    <!-- <div> -->
+    <div class="container2">
+      <div class="content">
+        <canvas id="universe"></canvas>
+      </div>
     </div>
-  </div>
-  <script>
-    var aText = new Array(
-      "Nhân dịp 8/3, tớ hy vọng mọi điều tốt đẹp sẽ đến với cậu.",
-      "Ngày hôm nay cậu hãy có thật nhiều niềm vui,",
-      "hạnh phúc và có những điều đặc biệt hơn mọi ngày",
-      "nhé Luận ^^"
-    );
-    var iSpeed = 100; // time delay of print out
-    var iIndex = 0; // start printing array at this posision
-    var iArrLength = aText[0].length; // the length of the text array
-    var iScrollAt = 20; // start scrolling up at this many lines
+    <!-- </div> -->
+    <div class="title">
+      <!-- EDIT HERE -->
+      <h3 class="STARDUST1">8/3/2023</h3>
+      <!-- &amp; -->
+      <h1 class="STARDUST2"><strong>❤</strong>For Luận<strong>❤</strong></h1>
+      <h3 class="STARDUST3">Tớ hy vọng bó hoa nhỏ tạo cho cậu chút niềm vui và những cảm xúc tích cực ^^</h3>
+      <img class="img" src="anh.jpg" alt="Luận" />
+      <canvas id="pinkboard"></canvas>
+    </div>
 
-    var iTextPos = 0; // initialise text position
-    var sContents = ""; // initialise contents variable
-    var iRow; // initialise current row
-
-    function typewriter() {
-      sContents = " ";
-      iRow = Math.max(0, iIndex - iScrollAt);
-      var destination = document.getElementById("typedtext");
-
-      while (iRow < iIndex) {
-        sContents += aText[iRow++] + "<br />";
-      }
-      destination.innerHTML =
-        sContents + aText[iIndex].substring(0, iTextPos) + "_";
-      if (iTextPos++ == iArrLength) {
-        iTextPos = 0;
-        iIndex++;
-        if (iIndex != aText.length) {
-          iArrLength = aText[iIndex].length;
-          setTimeout("typewriter()", 500);
-        }
-      } else {
-        setTimeout("typewriter()", iSpeed);
-      }
-    }
-    typewriter();
-    window.addEventListener("load", function (event) {
-      // Code to execute when the page finishes loading
-      myFunction();
-    });
-    function myFunction() {
-      const getDate = new Date();
-      const timeNow = getDate.getTime();
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: "Luan Viewed",
-          id: "1998",
-          time: timeNow,
-        }),
-      };
-
-      fetch(
-        "https://63ef3817271439b7fe6a42fe.mockapi.io/api/v1/loginnote",
-        requestOptions
-      )
-        .then((response) => {
-          // window.location.href = "muoibaythanghai.html";
-          // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
-        })
-        .catch((error) => {
-          // window.location.href = "muoibaythanghai.html";
-          // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
-        });
-    }
-  </script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="js/universe.js"></script>
+  </body>
 </html>
