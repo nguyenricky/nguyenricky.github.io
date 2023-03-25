@@ -1,128 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luận ^^</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      /* background: #000; */
+      background-image: url(iloveluan.jpg);
+      background-size: cover;
+      background-position-x: center;
+    }
+    #typedtext {
+      width: calc(100% - 80px);
+      color: white;
+      position: absolute;
+      top: 10px;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.1;
+      margin: 0 40px;
+      font-family: "Lavishly Yours";
+      z-index: 5;
+      font-weight: 500;
+    }
+    .navigate-to {
+      position: absolute;
+      bottom: 16px;
+      right: 12px;
+      text-align: center;
+      z-index: 99;
+    }
+    .navigate-to a {
+      font-family: "Roboto";
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      background: #d71b1b;
+      font-size: 12px;
+      border-radius: 10px;
+      padding: 8px;
+      font-weight: bold;
+    }
+    .textfield {
+      width: calc(100% - 80px);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      top: 160px;
+      margin: 0 40px;
+      z-index: 6;
+    }
+    #textarealuan {
+      width: 100%;
+      min-height: 150px;
+      background: transparent;
+      padding: 12px;
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 20px;
+      text-align: left;
+    }
+    .heart {
+      position: fixed;
+      font-size: 1.5rem;
+      top: -1vh;
+      transform: translateY(0);
+      animation: fall 3s linear forwards;
+    }
+    .confirm-div {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      z-index: 99999;
+    }
+    #confirm-btn {
+      line-height: 35px;
+      border-radius: 10px;
+      box-shadow: none;
+      border: none;
+      color: white;
+      background: red;
+      font-size: 20px;
+    }
+    #confirm-btn a {
+      text-decoration: none;
+      color: white;
+      padding: 0 5px;
+    }
+    #confirm-btn:active {
+      background: pink;
+    }
+    #reject-btn {
+      line-height: 35px;
+      border-radius: 10px;
+      box-shadow: none;
+      border: none;
+      color: white;
+      background: rgb(149, 140, 140);
+      font-size: 20px;
+    }
+    #reject-btn:active {
+      background: rgb(88, 87, 87);
+    }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luận ^^</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet" />
-</head>
-<style>
-  html,
-  body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    /* background: #000; */
-    background-image: url(missluan.jpg);
-    background-size: cover;
-    background-position-x: center;
-  }
-  #typedtext {
-    width: calc(100% - 80px);
-    color: white;
-    position: absolute;
-    top: 50px;
-    text-align: center;
-    font-size: 2em;
-    margin: 0 40px;
-    font-family: "Lavishly Yours";
-    z-index: 5;
-    font-weight: 500;
-  }
-  .navigate-to {
-    position: absolute;
-    bottom: 16px;
-    right: 12px;
-    text-align: center;
-    z-index: 99999;
-  }
-  .navigate-to a {
-    font-family: "Roboto";
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    background: #d71b1b;
-    font-size: 12px;
-    border-radius: 10px;
-    padding: 8px;
-    font-weight: bold;
-  }
-  .textfield {
-    width: calc(100% - 80px);
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    top: 160px;
-    margin: 0 40px;
-    z-index: 6;
-  }
-  #textarealuan {
-    width: 100%;
-    min-height: 150px;
-    background: transparent;
-    padding: 12px;
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 20px;
-    text-align: left;
-  }
-</style>
-<body>
-  <!-- <div id="typedtext">Cậu có chuyện gì vậy Luận, hãy chia sẻ với tớ nhé ?</div>
-  <div class="textfield">
-    <textarea placeholder="|..." id="textarealuan"></textarea>
-    <div class="navigate-to">
-      <a onclick="writeFunction()">Gửi tớ</a>
-    </div>
-  </div> -->
-  <script>
-    var aText = new Array(
-      "Luận này, cậu có biết điều làm tớ sợ nhất là gì không?",
-      "Đó chính là khi cậu lặng thinh. Tớ suy nghĩ rất nhiều, tớ nghĩ tới mọi khoảnh khắc, mọi sự việc, mọi thứ mà tớ đã từng làm, từng nói. Có phải chăng một điều gì đó tớ đã khiến cậu cảm thấy khó chịu không. Tớ rất muốn cậu chia sẻ với tớ để tớ có thể được biết.",
-      "Hãy giúp tớ xua tan sự thấp thỏm, mong ngóng này nhé. Tớ viết hơi dài rồi, tớ xin phép được",
-      ".....",
-      "===== Kết Luận ====="
-    );
-    var iSpeed = 150; // time delay of print out
-    var iIndex = 0; // start printing array at this posision
-    var iArrLength = aText[0].length; // the length of the text array
-    var iScrollAt = 20; // start scrolling up at this many lines
-
-    var iTextPos = 0; // initialise text position
-    var sContents = ""; // initialise contents variable
-    var iRow; // initialise current row
-
-    function typewriter() {
-      sContents = " ";
-      iRow = Math.max(0, iIndex - iScrollAt);
-      var destination = document.getElementById("typedtext");
-
-      while (iRow < iIndex) {
-        sContents += aText[iRow++] + "<br />";
+    @keyframes fall {
+      from {
+        transform: translateY(0vh) translateX(-10vw);
       }
-      destination.innerHTML =
-        sContents + aText[iIndex].substring(0, iTextPos) + "_";
-      if (iTextPos++ == iArrLength) {
-        iTextPos = 0;
-        iIndex++;
-        if (iIndex != aText.length) {
-          iArrLength = aText[iIndex].length;
-          setTimeout("typewriter()", 500);
-        }
-      } else {
-        setTimeout("typewriter()", iSpeed);
+      to {
+        transform: translateY(105vh) translateX(10vw);
       }
     }
-    // typewriter();
-    window.addEventListener("load", function (event) {
-      // Code to execute when the page finishes loading
-      myFunction();
-    });
-    function writeFunction() {
+  </style>
+  <body>
+    <div id="typedtext"></div>
+    <div class="confirm-div"></div>
+
+    <script>
+      setTimeout(() => {
+        let confirmdialog = document.querySelector(".confirm-div");
+        confirmdialog.innerHTML = `<button id="confirm-btn" onclick="myFunction('Luận đồng ý quen Chương')"> <a href="https://zalo.me/0345109494">Tớ đồng ý</a></button><button id="reject-btn" onclick="myFunction('Luận không đồng ý')">Từ chối</button>`;
+      }, 45000);
+      var aText = new Array(
+        "Luận, tớ có điều này muốn nói với cậu. Những ngày qua tớ đã suy nghĩ rất nhiều, tớ nghĩ rằng mình không thể im lặng và chần chừ thêm được nữa. Tớ sợ, tớ sợ rằng mình sẽ không thể nói ra được khi có một người khác yêu cậu. Tớ xin dùng hết sự can đảm và chân thành của mình để nói rằng: 'Tớ thích cậu rất rất nhiều'. Cuộc sống của tớ và cậu đều vẫn bình thường khi một mình nhưng sẽ thật tuyệt và nhiều ngày đặc biệt hơn nếu có thêm một người yêu thương đúng không cậu. Luận, cậu hãy cho tớ, cho hai đứa cơ hội nhé."
+      );
+      var iSpeed = 85; // time delay of print out
+      var iIndex = 0; // start printing array at this posision
+      var iArrLength = aText[0].length; // the length of the text array
+      var iScrollAt = 20; // start scrolling up at this many lines
+
+      var iTextPos = 0; // initialise text position
+      var sContents = ""; // initialise contents variable
+      var iRow; // initialise current row
+
+      function typewriter() {
+        sContents = " ";
+        iRow = Math.max(0, iIndex - iScrollAt);
+        var destination = document.getElementById("typedtext");
+
+        while (iRow < iIndex) {
+          sContents += aText[iRow++] + "<br />";
+        }
+        destination.innerHTML =
+          sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if (iTextPos++ == iArrLength) {
+          iTextPos = 0;
+          iIndex++;
+          if (iIndex != aText.length) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 500);
+          }
+        } else {
+          setTimeout("typewriter()", iSpeed);
+        }
+      }
+      typewriter();
+      window.addEventListener("load", function (event) {
+        // Code to execute when the page finishes loading
+        myFunction();
+      });
+      function writeFunction() {
         const getDate = new Date();
         const timeNow = getDate.getTime();
         const valueInput = document.getElementById("textarealuan").value;
@@ -144,33 +197,49 @@
             // window.location.href = "muoibaythanghai.html";
           });
       }
-    function myFunction() {
-      const getDate = new Date();
-      const timeNow = getDate.getTime();
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: "Luan Viewed",
-          id: "1998",
-          time: timeNow,
-        }),
-      };
+      function myFunction(input) {
+        const getDate = new Date();
+        const timeNow = getDate.getTime();
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: input ?? "Luan Viewed",
+            id: "1998",
+            time: timeNow,
+          }),
+        };
 
-      fetch(
-        "https://63ef3817271439b7fe6a42fe.mockapi.io/api/v1/loginnote",
-        requestOptions
-      )
-        .then((response) => {
-          // window.location.href = "muoibaythanghai.html";
-          // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
-        })
-        .catch((error) => {
-          // window.location.href = "muoibaythanghai.html";
-          // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
-        });
-    }
-  </script>
-</body>
+        fetch(
+          "https://63ef3817271439b7fe6a42fe.mockapi.io/api/v1/loginnote",
+          requestOptions
+        )
+          .then((response) => {
+            // window.location.href = "muoibaythanghai.html";
+            // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
+          })
+          .catch((error) => {
+            // window.location.href = "muoibaythanghai.html";
+            // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
+          });
+      }
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
 
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+        heart.innerText = "💗";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 300);
+    </script>
+  </body>
 </html>
