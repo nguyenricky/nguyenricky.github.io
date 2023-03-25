@@ -1,176 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luận ^^</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <style>
-    html,
-    body {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      /* background: #000; */
-      background-image: url(iloveluan.jpg);
-      background-size: cover;
-      background-position-x: center;
-    }
-    #typedtext {
-      width: calc(100% - 80px);
-      color: white;
-      position: absolute;
-      top: 10px;
-      text-align: center;
-      font-size: 30px;
-      line-height: 1.1;
-      margin: 0 40px;
-      font-family: "Lavishly Yours";
-      z-index: 5;
-      font-weight: 500;
-    }
-    .navigate-to {
-      position: absolute;
-      bottom: 16px;
-      right: 12px;
-      text-align: center;
-      z-index: 99;
-    }
-    .navigate-to a {
-      font-family: "Roboto";
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      background: #d71b1b;
-      font-size: 12px;
-      border-radius: 10px;
-      padding: 8px;
-      font-weight: bold;
-    }
-    .textfield {
-      width: calc(100% - 80px);
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      top: 160px;
-      margin: 0 40px;
-      z-index: 6;
-    }
-    #textarealuan {
-      width: 100%;
-      min-height: 150px;
-      background: transparent;
-      padding: 12px;
-      color: white;
-      font-size: 15px;
-      font-weight: 500;
-      border-radius: 20px;
-      text-align: left;
-    }
-    .heart {
-      position: fixed;
-      font-size: 1.5rem;
-      top: -1vh;
-      transform: translateY(0);
-      animation: fall 3s linear forwards;
-    }
-    .confirm-div {
-      position: absolute;
-      display: flex;
-      justify-content: space-around;
-      bottom: 16px;
-      left: 0;
-      right: 0;
-      z-index: 99999;
-    }
-    #confirm-btn {
-      line-height: 35px;
-      border-radius: 10px;
-      box-shadow: none;
-      border: none;
-      color: white;
-      background: red;
-      font-size: 20px;
-    }
-    #confirm-btn a {
-      text-decoration: none;
-      color: white;
-      padding: 0 5px;
-    }
-    #confirm-btn:active {
-      background: pink;
-    }
-    #reject-btn {
-      line-height: 35px;
-      border-radius: 10px;
-      box-shadow: none;
-      border: none;
-      color: white;
-      background: rgb(149, 140, 140);
-      font-size: 20px;
-    }
-    #reject-btn:active {
-      background: rgb(88, 87, 87);
-    }
-
-    @keyframes fall {
-      from {
-        transform: translateY(0vh) translateX(-10vw);
-      }
-      to {
-        transform: translateY(105vh) translateX(10vw);
-      }
-    }
-  </style>
-  <body>
-    <div id="typedtext"></div>
-    <div class="confirm-div"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm sory</title>
+</head>
+<style>
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+</style>
+<body>
+  <h1 style="text-align: center;">
+    Tớ phiền phức quá. Xin lỗi !
+  </h1>
 
     <script>
-      setTimeout(() => {
-        let confirmdialog = document.querySelector(".confirm-div");
-        confirmdialog.innerHTML = `<button id="confirm-btn" onclick="myFunction('Luận đồng ý quen Chương')"> <a href="https://zalo.me/0345109494">Tớ đồng ý</a></button><button id="reject-btn" onclick="myFunction('Luận không đồng ý')">Từ chối</button>`;
-      }, 45000);
-      var aText = new Array(
-        "Luận, tớ có điều này muốn nói với cậu. Những ngày qua tớ đã suy nghĩ rất nhiều, tớ nghĩ rằng mình không thể im lặng và chần chừ thêm được nữa. Tớ sợ, tớ sợ rằng mình sẽ không thể nói ra được khi có một người khác yêu cậu. Tớ xin dùng hết sự can đảm và chân thành của mình để nói rằng: 'Tớ thích cậu rất rất nhiều'. Cuộc sống của tớ và cậu đều vẫn bình thường khi một mình nhưng sẽ thật tuyệt và nhiều ngày đặc biệt hơn nếu có thêm một người yêu thương đúng không cậu. Luận, cậu hãy cho tớ, cho hai đứa cơ hội nhé."
-      );
-      var iSpeed = 85; // time delay of print out
-      var iIndex = 0; // start printing array at this posision
-      var iArrLength = aText[0].length; // the length of the text array
-      var iScrollAt = 20; // start scrolling up at this many lines
-
-      var iTextPos = 0; // initialise text position
-      var sContents = ""; // initialise contents variable
-      var iRow; // initialise current row
-
-      function typewriter() {
-        sContents = " ";
-        iRow = Math.max(0, iIndex - iScrollAt);
-        var destination = document.getElementById("typedtext");
-
-        while (iRow < iIndex) {
-          sContents += aText[iRow++] + "<br />";
-        }
-        destination.innerHTML =
-          sContents + aText[iIndex].substring(0, iTextPos) + "_";
-        if (iTextPos++ == iArrLength) {
-          iTextPos = 0;
-          iIndex++;
-          if (iIndex != aText.length) {
-            iArrLength = aText[iIndex].length;
-            setTimeout("typewriter()", 500);
-          }
-        } else {
-          setTimeout("typewriter()", iSpeed);
-        }
-      }
-      typewriter();
       window.addEventListener("load", function (event) {
         // Code to execute when the page finishes loading
         myFunction();
@@ -204,7 +53,7 @@
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            name: input ?? "Luan Viewed",
+            name: input ?? "Luan Sory ĐMDMMMM",
             id: "1998",
             time: timeNow,
           }),
@@ -223,22 +72,6 @@
             // document.getElementById("status").innerHTML = "Tớ nhớ cậu !";
           });
       }
-      function createHeart() {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-
-        heart.innerText = "💗";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 5000);
-      }
-
       setInterval(createHeart, 300);
     </script>
   </body>
